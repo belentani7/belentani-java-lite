@@ -1,0 +1,15 @@
+name: CI (baseline)
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: baseline notice
+        run: |
+          echo "No build system detected at the repository root."
+          echo "This workflow only verifies that checkout succeeded."
